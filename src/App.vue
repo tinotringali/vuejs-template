@@ -20,9 +20,10 @@ export default{
   <AppHeader />
   <AppMain />
   <AppFooter />
-  
+
 </template>
 
-<style scoped>
+<style lang="scss">
+
 
 </style>
