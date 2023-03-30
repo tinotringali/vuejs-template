@@ -19,7 +19,7 @@
  <main>
     <ul>
         <li v-for="movie in store.movies">
-            <AppCards />
+            <AppCards :info="movie" />
         </li>
     </ul>
  </main>

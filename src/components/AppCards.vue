@@ -1,14 +1,17 @@
 <script>
     export default {
-        name:'AppCards'
+        name:'AppCards',
+        props:{
+            info: Object
+        }
     }
 </script>
 
 <template>
     <article>
-        <h3>Title</h3>
-        <h4>Original Title</h4>
-        <div>language</div>
-        <div>vote</div>
+        <h3>{{info.title}}</h3>
+        <h4>{{info.original_title}}</h4>
+        <div>{{info.original_language}}</div>
+        <div>{{info.vote_average}}</div>
     </article>
 </template>
