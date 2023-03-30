@@ -1,15 +1,28 @@
 <script>
-
+    import { store } from './store';
+    import AppCards from './AppCards.vue';
     export default {
-        name:'AppMain'
+        name:'AppMain',
+        components:{
+            AppCards
+        },
+        data(){
+            return{
+                store
+            }
+        },
     }
 
 </script>
 
 <template>
-    <div>
-        main
-    </div>
+ <main>
+    <ul>
+        <li v-for="movie in store.movies">
+            <AppCards />
+        </li>
+    </ul>
+ </main>
 </template>
 
 <style lang="scss" scoped>
