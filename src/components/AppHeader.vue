@@ -11,7 +11,9 @@
         },
         methods:{
             search(){
-                axios.get(this.store.config.urlMovie, {
+
+                //Movie
+                axios.get(this.store.config.apiUrl + this.store.config.endpointMovie , {
                     params:{
                         api_key: this.store.config.apiKey,
                         language: this.store.config.defaultLang,
@@ -20,6 +22,18 @@
                 }).then((response) => {
                     console.log(response)
                     this.store.movies = response.data.results;
+                });
+                
+                //serieTv
+                axios.get(this.store.config.apiUrl + this.store.config.endpointSerieTv , {
+                    params:{
+                        api_key: this.store.config.apiKey,
+                        language: this.store.config.defaultLang,
+                        query: this.store.searchKey
+                    }
+                }).then((response) => {
+                    console.log(response)
+                    this.store.serieTv = response.data.results;
                 })
             }
         }

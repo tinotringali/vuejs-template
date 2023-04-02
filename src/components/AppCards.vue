@@ -1,9 +1,15 @@
 <script>
+import { store } from './store';
 import CountryFlag from 'vue-country-flag-next'
 export default {
     name: 'AppCards',
     components: {
         CountryFlag
+    },
+    data(){
+        return{
+            store
+        }
     },
     props: {
         info: Object
@@ -24,10 +30,11 @@ export default {
 }
 </script>
 
-<template>
+<template>  
     <article>
-        <h3>{{ info.title }}</h3>
-        <h4>{{ info.original_title }}</h4>
+        <img :src="store.config.urlImg + info.poster_path" alt="">
+        <h3>{{ info.title || info.name }}</h3>
+        <h4>{{ info.original_title || info.original_name }}</h4>
         <div>{{ getLanguage }}<country-flag :country=getLanguage size='small'/></div> 
         <div>{{ getVote }}</div>
         <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote" />
