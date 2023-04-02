@@ -1,3 +1,8 @@
 @use './_partial/reset';
 @use './_partial/variables';
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+body{
+    background-color: black;
+}

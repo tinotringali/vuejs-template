@@ -18,15 +18,15 @@
 <template>
  <main>
     <!-- movie -->
-    <h2>Film</h2>
-    <ul>
-        <li v-for="movie in store.movies">
+    <h2 class="text-center text-light my-5">Movie</h2>
+    <ul class="d-flex flex-wrap justify-content-center gap-3">
+        <li class="d-flex" v-for="movie in store.movies">
             <AppCards :info="movie" />
         </li>
     </ul>
     <!-- serieTv -->
-    <h2>Seire Tv</h2>
-    <ul>
+    <h2 class="text-center text-light my-5">Serie Tv</h2>
+    <ul class="d-flex flex-wrap justify-content-center gap-3">
         <li v-for="serieTv in store.serieTv">
             <AppCards :info="serieTv" />
         </li>
