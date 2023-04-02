@@ -8,7 +8,7 @@ export default {
     props: {
         info: Object
     },
-    methods: {
+    computed: {
         getLanguage() {
             switch (this.info.original_language) {
                 case "en":
@@ -17,8 +17,10 @@ export default {
                     return this.info.original_language;
             }
         },
-
-    },
+        getVote(){
+            return Math.ceil(this.info.vote_average / 2);
+        }
+    }
 }
 </script>
 
@@ -26,7 +28,7 @@ export default {
     <article>
         <h3>{{ info.title }}</h3>
         <h4>{{ info.original_title }}</h4>
-        <div><country-flag :country=getLanguage() size='small'/></div>
-        <div>{{ info.vote_average }}</div>
+        <div>{{ getLanguage }}<country-flag :country=getLanguage size='small'/></div> 
+        <div>{{ getVote }}</div>
     </article>
 </template>
