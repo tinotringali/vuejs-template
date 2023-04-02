@@ -30,5 +30,7 @@ export default {
         <h4>{{ info.original_title }}</h4>
         <div>{{ getLanguage }}<country-flag :country=getLanguage size='small'/></div> 
         <div>{{ getVote }}</div>
+        <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote" />
+        <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5-getVote"/>
     </article>
 </template>
